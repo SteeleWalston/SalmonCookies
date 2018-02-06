@@ -18,20 +18,26 @@ const cookiesAirport = {
     minCustomers: 23,
     maxCustomers: 65,
     avgCookiesPerCustomer: 6.3,
-    customersPerHour: function() {
+    hourlyArray: [],
+    cookiesPerHour: function() {
         const min = this.minCustomers;
         const max = this.maxCustomers;
-        return Math.round(Math.random() * (max - min) + min);
-    },
-    createLi: function () {
-        const li = document.createElement('li');
-        li.textContent = Math.round(this.customersPerHour() * this.avgCookiesPerCustomer);
-        return li;
+        // const customers = Math.round(Math.random() * (max - min) + min);
+        // const calcCookies = this.avgCookiesPerCustomer * customers;
+        const timeOfDay = ['6', '7', '8', '9', '10', '11', '12', '1', '2', '3', '4', '5', '6', '7', '8'];
+        for (let i = 0; i < timeOfDay.length; i++) {
+            const customers = Math.round(Math.random() * (max - min) + min);
+            const calcCookies = this.avgCookiesPerCustomer * customers;
+            this.hourlyArray.push(Math.round(calcCookies));
+        }
     }
 };
 
-console.log(cookiesAirport.customersPerHour());
-console.log(cookiesAirport.createLi());
+console.log(cookiesAirport.hourlyArray);
+
+const airportLocation = {
+    cookiesArray: [cookiesAirport.cookiesPerHour()]
+};
 
 const cookiesPioneer = {
     minCustomers: 3,
