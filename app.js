@@ -100,17 +100,84 @@ airportList.appendChild(newListItem);
 //Pioneer Location
 
 const cookiesPioneer = {
-    minCustomers: 3,
-    maxCustomers: 24,
-    avgCookiesPerCustomer: 1.2,
-    customersPerHour: function() {
+    minCustomers: 23,
+    maxCustomers: 65,
+    avgCookiesPerCustomer: 6.3,
+    hourlyArray: [],
+    cookiesPerHour: function() {
         const min = this.minCustomers;
         const max = this.maxCustomers;
-        return Math.round(Math.random() * (max - min) + min);
+        const timeOfDay = ['6', '7', '8', '9', '10', '11', '12', '1', '2', '3', '4', '5', '6', '7', '8'];
+        for (let i = 0; i < timeOfDay.length; i++) {
+            const customers = Math.round(Math.random() * (max - min) + min);
+            const calcCookies = this.avgCookiesPerCustomer * customers;
+            const cookiesPerHour = Math.round(calcCookies);
+            this.hourlyArray.push(cookiesPerHour);
+        }
     }
 };
 
-console.log(cookiesPioneer.customersPerHour());
+cookiesPioneer.cookiesPerHour();
+
+const pioneerList = document.getElementById('pioneer-cookies');
+console.log(pioneerList);
+
+let pioneerCookiePerHour = [
+    cookiesPioneer.hourlyArray[0],
+    cookiesPioneer.hourlyArray[1],
+    cookiesPioneer.hourlyArray[2],
+    cookiesPioneer.hourlyArray[3],
+    cookiesPioneer.hourlyArray[4],
+    cookiesPioneer.hourlyArray[5],
+    cookiesPioneer.hourlyArray[6],
+    cookiesPioneer.hourlyArray[7],
+    cookiesPioneer.hourlyArray[8],
+    cookiesPioneer.hourlyArray[9],
+    cookiesPioneer.hourlyArray[10],
+    cookiesPioneer.hourlyArray[11],
+    cookiesPioneer.hourlyArray[12],
+    cookiesPioneer.hourlyArray[13],
+    cookiesPioneer.hourlyArray[14]
+
+];
+
+let pioneerTimeOfDay = [
+    '6am: ',
+    '7am: ',
+    '8am: ',
+    '9am: ',
+    '10am: ',
+    '11am: ',
+    '12pm: ',
+    '1pm: ',
+    '2pm: ',
+    '3pm: ',
+    '4pm: ',
+    '5pm: ',
+    '6pm: ',
+    '7pm: ',
+    '8pm: ',
+
+];
+
+for (let i = 0; i < pioneerCookiePerHour.length; i++) {
+    const pioneerNewListItem = document.createElement('li');
+    pioneerNewListItem.innerHTML = pioneerTimeOfDay[i] + cookiesPioneer.hourlyArray[i];
+    console.log(newListItem);
+
+    pioneerList.appendChild(pioneerNewListItem);
+}
+
+//Creating a list item for Total of all hours
+
+const pioneerNewListItem = document.createElement('li');
+pioneerNewListItem.innerHTML = 'Total: ' + cookiesPioneer.hourlyArray.reduce(reducer);
+console.log(newListItem);
+
+pioneerList.appendChild(pioneerNewListItem);
+
+
+//Powells Location
 
 const cookiesPowells = {
     minCustomers: 11,
@@ -125,6 +192,8 @@ const cookiesPowells = {
 
 console.log(cookiesPowells.customersPerHour());
 
+//St Johns Location 
+
 const cookiesStJohns = {
     minCustomers: 20,
     maxCustomers: 38,
@@ -137,6 +206,8 @@ const cookiesStJohns = {
 };
 
 console.log(cookiesStJohns.customersPerHour());
+
+//Waterfront Location 
 
 const cookiesWaterFront = {
     minCustomers: 2,
