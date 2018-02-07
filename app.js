@@ -13,53 +13,8 @@ const location = {
 */
 
 
-//Airport Location
-
-const cookiesAirport = {
-    minCustomers: 23,
-    maxCustomers: 65,
-    avgCookiesPerCustomer: 6.3,
-    hourlyArray: [],
-    cookiesPerHour: function() {
-        const min = this.minCustomers;
-        const max = this.maxCustomers;
-        const timeOfDay = ['6', '7', '8', '9', '10', '11', '12', '1', '2', '3', '4', '5', '6', '7', '8'];
-        for (let i = 0; i < timeOfDay.length; i++) {
-            const customers = Math.round(Math.random() * (max - min) + min);
-            const calcCookies = this.avgCookiesPerCustomer * customers;
-            const cookiesPerHour = Math.round(calcCookies);
-            this.hourlyArray.push(cookiesPerHour);
-        }
-    }
-};
-
-cookiesAirport.cookiesPerHour();
-
-const airportList = document.getElementById('airport-cookies');
-console.log(airportList);
-
-//Creating list items for the array inside the cookiesAirport object
-
-const cookiePerHour = [
-    cookiesAirport.hourlyArray[0],
-    cookiesAirport.hourlyArray[1],
-    cookiesAirport.hourlyArray[2],
-    cookiesAirport.hourlyArray[3],
-    cookiesAirport.hourlyArray[4],
-    cookiesAirport.hourlyArray[5],
-    cookiesAirport.hourlyArray[6],
-    cookiesAirport.hourlyArray[7],
-    cookiesAirport.hourlyArray[8],
-    cookiesAirport.hourlyArray[9],
-    cookiesAirport.hourlyArray[10],
-    cookiesAirport.hourlyArray[11],
-    cookiesAirport.hourlyArray[12],
-    cookiesAirport.hourlyArray[13],
-    cookiesAirport.hourlyArray[14]
-
-];
-
 const timeOfDay = [
+    '',
     '6am: ',
     '7am: ',
     '8am: ',
@@ -75,189 +30,119 @@ const timeOfDay = [
     '6pm: ',
     '7pm: ',
     '8pm: ',
-
+    'Daily Total',
 ];
 
-for (let i = 0; i < cookiePerHour.length; i++) {
-    const newListItem = document.createElement('li');
-    newListItem.innerHTML = timeOfDay[i] + cookiesAirport.hourlyArray[i];
-    console.log(newListItem);
-
-    airportList.appendChild(newListItem);
-}
-
-//Creating a list item for Total of all hours
+const footerArray = [
+    'Total',
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+];
 
 const reducer = (accumulator, currentValue) => accumulator + currentValue;
 
-const newListItem = document.createElement('li');
-newListItem.innerHTML = 'Total: ' + cookiesAirport.hourlyArray.reduce(reducer);
-console.log(newListItem);
+//Constructor
 
-airportList.appendChild(newListItem);
+function Location (location, minCustomers, maxCustomers, avgCookiesPerCustomer) {
+    this.location = location;
+    this.minCustomers = minCustomers;
+    this.maxCustomers = maxCustomers;
+    this.avgCookiesPerCustomer = avgCookiesPerCustomer;
+    this.hourlyArray = [];
+}
 
-
-//Pioneer Location
-
-const cookiesPioneer = {
-    minCustomers: 3,
-    maxCustomers: 24,
-    avgCookiesPerCustomer: 1.2,
-    hourlyArray: [],
-    cookiesPerHour: function() {
-        const min = this.minCustomers;
-        const max = this.maxCustomers;
-        const timeOfDay = ['6', '7', '8', '9', '10', '11', '12', '1', '2', '3', '4', '5', '6', '7', '8'];
-        for (let i = 0; i < timeOfDay.length; i++) {
-            const customers = Math.round(Math.random() * (max - min) + min);
-            const calcCookies = this.avgCookiesPerCustomer * customers;
-            const cookiesPerHour = Math.round(calcCookies);
-            this.hourlyArray.push(cookiesPerHour);
-        }
+Location.prototype.cookiesPerHour = function() {
+    const min = this.minCustomers;
+    const max = this.maxCustomers;
+    for (let i = 0; i < timeOfDay.length; i++) {
+        const customers = Math.round(Math.random() * (max - min) + min);
+        const calcCookies = this.avgCookiesPerCustomer * customers;
+        const cookiesPerHour = Math.round(calcCookies);
+        this.hourlyArray.push(cookiesPerHour);
     }
 };
 
-cookiesPioneer.cookiesPerHour();
+function renderHeader() {
+    const thead = document.querySelector('#cookies-table thead');
+    const tr = document.createElement('tr');
+    for (let i = 0; i < timeOfDay.length; i++) {
+        const th = document.createElement('th');
+        th.textContent = timeOfDay[i];
 
-const pioneerList = document.getElementById('pioneer-cookies');
-console.log(pioneerList);
+        tr.appendChild(th);
+        thead.appendChild(tr);
 
-for (let i = 0; i < cookiePerHour.length; i++) {
-    const pioneerNewListItem = document.createElement('li');
-    pioneerNewListItem.innerHTML = timeOfDay[i] + cookiesPioneer.hourlyArray[i];
-    console.log(pioneerNewListItem);
-
-    pioneerList.appendChild(pioneerNewListItem);
-}
-
-//Creating a list item for Total of all hours
-
-const pioneerNewListItem = document.createElement('li');
-pioneerNewListItem.innerHTML = 'Total: ' + cookiesPioneer.hourlyArray.reduce(reducer);
-console.log(pioneerNewListItem);
-
-pioneerList.appendChild(pioneerNewListItem);
-
-
-//Powells Location
-
-const cookiesPowells = {
-    minCustomers: 11,
-    maxCustomers: 38,
-    avgCookiesPerCustomer: 3.7,
-    hourlyArray: [],
-    cookiesPerHour: function() {
-        const min = this.minCustomers;
-        const max = this.maxCustomers;
-        const timeOfDay = ['6', '7', '8', '9', '10', '11', '12', '1', '2', '3', '4', '5', '6', '7', '8'];
-        for (let i = 0; i < timeOfDay.length; i++) {
-            const customers = Math.round(Math.random() * (max - min) + min);
-            const calcCookies = this.avgCookiesPerCustomer * customers;
-            const cookiesPerHour = Math.round(calcCookies);
-            this.hourlyArray.push(cookiesPerHour);
-        }
     }
 };
 
-cookiesPowells.cookiesPerHour();
+function renderFooter() {
+    const tfoot = document.querySelector('#cookies-table tfoot');
+    const tr = document.createElement('tr');
+    for (let i = 0; i < footerArray.length; i++) {
+        const td = document.createElement('th');
+        td.textContent = footerArray[i];
 
-const powellsList = document.getElementById('powells-cookies');
-console.log(powellsList);
+        tr.appendChild(td);
+        tfoot.appendChild(tr);
 
-for (let i = 0; i < cookiePerHour.length; i++) {
-    const powellsNewListItem = document.createElement('li');
-    powellsNewListItem.innerHTML = timeOfDay[i] + cookiesPowells.hourlyArray[i];
-    console.log(powellsNewListItem);
-
-    powellsList.appendChild(powellsNewListItem);
-}
-
-//Creating a list item for Total of all hours
-
-const powellsNewListItem = document.createElement('li');
-powellsNewListItem.innerHTML = 'Total: ' + cookiesPowells.hourlyArray.reduce(reducer);
-console.log(powellsNewListItem);
-
-powellsList.appendChild(powellsNewListItem);
-
-//St Johns Location 
-
-const cookiesStJohns = {
-    minCustomers: 20,
-    maxCustomers: 38,
-    avgCookiesPerCustomer: 2.3,
-    hourlyArray: [],
-    cookiesPerHour: function() {
-        const min = this.minCustomers;
-        const max = this.maxCustomers;
-        const timeOfDay = ['6', '7', '8', '9', '10', '11', '12', '1', '2', '3', '4', '5', '6', '7', '8'];
-        for (let i = 0; i < timeOfDay.length; i++) {
-            const customers = Math.round(Math.random() * (max - min) + min);
-            const calcCookies = this.avgCookiesPerCustomer * customers;
-            const cookiesPerHour = Math.round(calcCookies);
-            this.hourlyArray.push(cookiesPerHour);
-        }
     }
 };
 
-cookiesStJohns.cookiesPerHour();
+Location.prototype.buildTable = function() {
+    const tbody = document.querySelector('#cookies-table tbody');
+    const tr = document.createElement('tr');
+    const td = document.createElement('td');
+    td.textContent = this.location;
+    tr.appendChild(td);
+    for (let i = 0; i < this.hourlyArray.length - 2; i++) {
+        const td = document.createElement('td');
+        td.textContent = this.hourlyArray[i];
+        // footerArray.push(i);
 
-const stJohnsList = document.getElementById('st-johns-cookies');
-console.log(stJohnsList);
 
-for (let i = 0; i < cookiePerHour.length; i++) {
-    const stJohnsNewListItem = document.createElement('li');
-    stJohnsNewListItem.innerHTML = timeOfDay[i] + cookiesStJohns.hourlyArray[i];
-    console.log(stJohnsNewListItem);
-
-    stJohnsList.appendChild(stJohnsNewListItem);
-}
-
-//Creating a list item for Total of all hours
-
-const stJohnsNewListItem = document.createElement('li');
-stJohnsNewListItem.innerHTML = 'Total: ' + cookiesStJohns.hourlyArray.reduce(reducer);
-console.log(stJohnsNewListItem);
-
-stJohnsList.appendChild(stJohnsNewListItem);
-
-//Waterfront Location 
-
-const cookiesWaterfront = {
-    minCustomers: 2,
-    maxCustomers: 16,
-    avgCookiesPerCustomer: 4.6,
-    hourlyArray: [],
-    cookiesPerHour: function() {
-        const min = this.minCustomers;
-        const max = this.maxCustomers;
-        const timeOfDay = ['6', '7', '8', '9', '10', '11', '12', '1', '2', '3', '4', '5', '6', '7', '8'];
-        for (let i = 0; i < timeOfDay.length; i++) {
-            const customers = Math.round(Math.random() * (max - min) + min);
-            const calcCookies = this.avgCookiesPerCustomer * customers;
-            const cookiesPerHour = Math.round(calcCookies);
-            this.hourlyArray.push(cookiesPerHour);
-        }
+        tr.appendChild(td);
+        tbody.appendChild(tr);
     }
+    const th = document.createElement('th');
+    th.textContent = this.hourlyArray.reduce(reducer);
+
+    tr.appendChild(th);
 };
 
-cookiesWaterfront.cookiesPerHour();
+const airportLocation = new Location('Airport', 23, 65, 6.3);
+console.log(airportLocation);
+airportLocation.cookiesPerHour();
+airportLocation.buildTable();
 
-const waterfrontList = document.getElementById('waterfront-cookies');
-console.log(waterfrontList);
+const pioneerLocation = new Location('Pioneer', 3, 24, 1.2);
+pioneerLocation.cookiesPerHour();
+pioneerLocation.buildTable();
 
-for (let i = 0; i < cookiePerHour.length; i++) {
-    const waterfrontNewListItem = document.createElement('li');
-    waterfrontNewListItem.innerHTML = timeOfDay[i] + cookiesWaterfront.hourlyArray[i];
-    console.log(waterfrontNewListItem);
+const powellsLocation = new Location('Powells', 3, 24, 1.2);
+powellsLocation.cookiesPerHour();
+powellsLocation.buildTable();
 
-    waterfrontList.appendChild(waterfrontNewListItem);
-}
+const stjohnsLocation = new Location('St. Johns', 3, 24, 1.2);
+stjohnsLocation.cookiesPerHour();
+stjohnsLocation.buildTable();
 
-//Creating a list item for Total of all hours
+const waterfrontLocation = new Location('Waterfront', 3, 24, 1.2);
+waterfrontLocation.cookiesPerHour();
+waterfrontLocation.buildTable();
 
-const waterfrontNewListItem = document.createElement('li');
-waterfrontNewListItem.innerHTML = 'Total: ' + cookiesWaterfront.hourlyArray.reduce(reducer);
-console.log(waterfrontNewListItem);
-
-waterfrontList.appendChild(waterfrontNewListItem);
+renderHeader();
+renderFooter();

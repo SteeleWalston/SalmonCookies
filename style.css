@@ -1,3 +1,15 @@
-#airport-cookies {
-    
+#cookies-table {
+    border: dashed 1px black
+}
+
+td {
+    border: dashed 1px black
+}
+
+th {
+    border: dashed 1px black
+}
+
+tr {
+    border: dashed 1px black
 }
