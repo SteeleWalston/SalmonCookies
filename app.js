@@ -148,3 +148,15 @@ renderHeader();
 renderFooter();
 
 const newLocationForm = document.querySelector('form');
+
+newLocationForm.addEventListener('submit', function() {
+    event.preventDefault();
+    const location = this.newStore.value;
+    const minCustomers = this.minCustomers.value;
+    const maxCustomers = this.maxCustomers.value;
+    const avgCookiesPerCustomer = this.cookiesPer.value;
+
+    const newStore = new Location(location, minCustomers, maxCustomers, avgCookiesPerCustomer);
+    newStore.cookiesPerHour();
+    newStore.buildTable();
+});
