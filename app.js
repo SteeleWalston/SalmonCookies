@@ -11,7 +11,7 @@ const location = {
     }
 };
 */
-// const locations = ['Airport', 'Pioneer Square', 'Powells', 'St. Johns', 'Waterfront'];
+
 
 const timeOfDay = [
     '',
