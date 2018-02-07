@@ -146,3 +146,5 @@ waterfrontLocation.buildTable();
 
 renderHeader();
 renderFooter();
+
+const newLocationForm = document.querySelector('form');
