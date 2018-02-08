@@ -1,17 +1,3 @@
-/* 
-
-const location = {
-    minCustomers: 0,
-    maxCustomers: 0,
-    avgCookiesPerCustomer: 0,
-    customersPerHour: function (min, max) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
-};
-*/
-
 
 const timeOfDay = [
     '',
@@ -33,24 +19,7 @@ const timeOfDay = [
     'Daily Total',
 ];
 
-const footerArray = [
-    'Total',
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
+const newStoreArray = [
 ];
 
 const reducer = (accumulator, currentValue) => accumulator + currentValue;
@@ -92,9 +61,12 @@ function renderHeader() {
 function renderFooter() {
     const tfoot = document.querySelector('#cookies-table tfoot');
     const tr = document.createElement('tr');
-    for (let i = 0; i < footerArray.length; i++) {
+    const td = document.createElement('td');
+    td.textContent = 'Total';
+    tr.appendChild(td);
+    for (let i = 0; i < timeOfDay.length - 2; i++) {
         const td = document.createElement('th');
-        td.textContent = footerArray[i];
+        td.textContent = airportLocation.hourlyArray[i] + pioneerLocation.hourlyArray[i] + powellsLocation.hourlyArray[i] + stjohnsLocation.hourlyArray[i] + waterfrontLocation.hourlyArray[i];
 
         tr.appendChild(td);
         tfoot.appendChild(tr);
@@ -111,12 +83,11 @@ Location.prototype.buildTable = function() {
     for (let i = 0; i < this.hourlyArray.length - 2; i++) {
         const td = document.createElement('td');
         td.textContent = this.hourlyArray[i];
-        // footerArray.push(i);
-
 
         tr.appendChild(td);
         tbody.appendChild(tr);
     }
+
     const th = document.createElement('th');
     th.textContent = this.hourlyArray.reduce(reducer);
 
