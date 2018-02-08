@@ -2,9 +2,11 @@
 font-family: 'Patua One', cursive;
 font-family: 'Roboto Slab', serif; */
 
-
 #cookies-table {
-    border: dashed 1px black
+    align-content: center;
+    border: dashed 1px black;
+    margin: auto;
+    background-color: rgba(211, 90, 69, 0.452)
 }
 
 td {
@@ -19,8 +21,9 @@ tr {
     border: dashed 1px black
 }
 
-body {
-    background: rgb(255, 204, 195)
+html, body {
+    overflow-x: hidden;
+    background: rgb(255, 204, 195);
 }
 
 h1, h2 {
@@ -32,7 +35,7 @@ h1, h2 {
     text-align: center;
     margin-top: 50px;
     margin-bottom: 50px;
-    font-size: 75px
+    font-size: 110px
 }
 
 nav {
@@ -43,11 +46,9 @@ nav {
 nav ul {
     text-align: center;
     padding-left: 0px;
-    font-family: 'Patua One', cursive;
-    background-color: rgba(211, 90, 69, 0.452);
+    font-family: 'Roboto Slab', serif;
     padding: 10px 30px 10px 30px;
-    border-radius: 10px
-    
+    border-radius: 10px;
 }
 
 nav li {
@@ -63,12 +64,56 @@ nav li {
 #intro {
     width: 700px;
     height: 500px;
-    border: dashed 1px black;
-    margin-top: 50px
+    margin-top: 100px;
+    margin-left: -50px;
+    background-color: rgba(211, 90, 69, 0.452);
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px
 }
 
-#intro h2 {
-    margin-left: 20px;
+h2 {
+    margin-left: 75px;
     margin-top: 20px;
     font-size: 50px
+}
+
+#about {
+    float: right;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    width: 700px;
+    height: 500px;
+    margin-top: 50px;
+    margin-right: -100px;
+    background-color: rgba(255, 255, 255, 0.521)
+}
+
+#about h2 {
+    margin-right: 130px;
+    text-align: right;
+}
+
+#locations {
+    width: 700px;
+    height: 500px;
+    margin-top: 600px;
+    margin-left: -50px;
+    background-color: rgba(211, 90, 69, 0.452);
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px
+}
+
+#contact {
+    float: right;
+    border-radius: 15px;
+    width: 700px;
+    height: 500px;
+    margin-top: 50px;
+    margin-right: -50px;
+    background-color: rgba(255, 255, 255, 0.521)
+}
+
+#contact h2 {
+    text-align: right;
+    margin-right: 80px
 }
