@@ -58,21 +58,21 @@ function renderHeader() {
     }
 };
 
-function renderFooter() {
-    const tfoot = document.querySelector('#cookies-table tfoot');
-    const tr = document.createElement('tr');
-    const td = document.createElement('td');
-    td.textContent = 'Total';
-    tr.appendChild(td);
-    for (let i = 0; i < timeOfDay.length - 2; i++) {
-        const td = document.createElement('th');
-        td.textContent = airportLocation.hourlyArray[i] + pioneerLocation.hourlyArray[i] + powellsLocation.hourlyArray[i] + stjohnsLocation.hourlyArray[i] + waterfrontLocation.hourlyArray[i];
+// function renderFooter() {
+//     const tfoot = document.querySelector('#cookies-table tfoot');
+//     const tr = document.createElement('tr');
+//     const td = document.createElement('td');
+//     td.textContent = 'Total';
+//     tr.appendChild(td);
+//     for (let i = 0; i < timeOfDay.length - 2; i++) {
+//         const td = document.createElement('th');
+//         td.textContent = airportLocation.hourlyArray[i] + pioneerLocation.hourlyArray[i] + powellsLocation.hourlyArray[i] + stjohnsLocation.hourlyArray[i] + waterfrontLocation.hourlyArray[i];
 
-        tr.appendChild(td);
-        tfoot.appendChild(tr);
+//         tr.appendChild(td);
+//         tfoot.appendChild(tr);
 
-    }
-};
+//     }
+// };
 
 Location.prototype.buildTable = function() {
     const tbody = document.querySelector('#cookies-table tbody');
@@ -116,7 +116,7 @@ waterfrontLocation.cookiesPerHour();
 waterfrontLocation.buildTable();
 
 renderHeader();
-renderFooter();
+// renderFooter();
 
 const newLocationForm = document.querySelector('form');
 
