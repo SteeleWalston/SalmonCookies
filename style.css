@@ -13,3 +13,7 @@ th {
 tr {
     border: dashed 1px black
 }
+
+body {
+    background: rgba(255, 175, 161, 0.74)
+}
