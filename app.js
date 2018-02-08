@@ -19,8 +19,8 @@ const timeOfDay = [
     'Daily Total',
 ];
 
-const newStoreArray = [
-];
+// const newStoreArray = [
+// ];
 
 const reducer = (accumulator, currentValue) => accumulator + currentValue;
 
