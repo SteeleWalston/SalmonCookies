@@ -61,6 +61,11 @@ nav li {
 
 }
 
+a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
 #intro {
     width: 700px;
     height: 400px;
@@ -87,7 +92,7 @@ h2 {
 }
 
 #salmon {
-    margin-left: 850px;
+    margin-left: 1200px;
     margin-top: -250px;
     border-radius: 40px
 }
@@ -119,12 +124,12 @@ h2 {
 #family-pic {
     width: 500px;
     margin-top: 230px;
-    margin-left: 50px;
+    margin-left: 150px;
     border-radius: 15px
 }
 
 #locations {
-    width: 700px;
+    width: 1200px;
     height: 1600px;
     margin-top: 600px;
     margin-left: -50px;
@@ -135,7 +140,7 @@ h2 {
 
 #locations ul {
     list-style-image: url(https://raw.githubusercontent.com/alchemy-bootcamp-one-winter-2018/lectures/master/class-09-css_wireframe_part_1/lab/assets/salmon.png);
-    margin-left: 50px
+    margin-left: 150px
 }
 
 #locations li {
