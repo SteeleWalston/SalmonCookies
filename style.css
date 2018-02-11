@@ -2,28 +2,44 @@
 font-family: 'Patua One', cursive;
 font-family: 'Roboto Slab', serif; */
 
-#cookies-table {
+#store-header {
+    text-align: center
+}
+
+form fieldset {
+    margin-top: 40px;
     align-content: center;
-    border: dashed 1px black;
+    width: 800 px
+
+}
+
+#cookies-table {
+    width: 800px;
+    align-content: center;
     margin: auto;
-    background-color: rgba(211, 90, 69, 0.452)
+    background-color: rgba(211, 90, 69, 0.452);
+    text-align: center
 }
 
 td {
-    border: dashed 1px black
+    border: solid 1px white
 }
 
 th {
-    border: dashed 1px black
+    border: solid 1px white
 }
 
 tr {
-    border: dashed 1px black
+    border: solid 1px white
 }
 
 html, body {
     overflow-x: hidden;
     background: rgb(255, 204, 195);
+}
+
+body {
+    margin: 0
 }
 
 h1, h2 {
