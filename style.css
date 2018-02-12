@@ -1,15 +1,217 @@
+/* font-family: 'Permanent Marker', cursive;
+font-family: 'Patua One', cursive;
+font-family: 'Roboto Slab', serif; */
+
+#store-header {
+    text-align: center
+}
+
+form fieldset {
+    margin-top: 40px;
+    align-content: center;
+    width: 800 px
+
+}
+
 #cookies-table {
-    border: dashed 1px black
+    width: 800px;
+    align-content: center;
+    margin: auto;
+    background-color: rgba(211, 90, 69, 0.452);
+    text-align: center
 }
 
 td {
-    border: dashed 1px black
+    border: solid 1px white
 }
 
 th {
-    border: dashed 1px black
+    border: solid 1px white
 }
 
 tr {
-    border: dashed 1px black
+    border: solid 1px white
+}
+
+html, body {
+    overflow-x: hidden;
+    background: rgb(255, 204, 195);
+}
+
+body {
+    margin: 0
+}
+
+h1, h2 {
+    font-family: 'Permanent Marker', cursive;
+    color: rgb(211, 90, 69)
+}
+
+#merch-section {
+    background-color: rgb(255, 242, 240)
+}
+
+#merch-images {
+    padding-right: 20px 
+}
+
+#merch-section p {
+    padding-left: 20px;
+    margin-left: 75px;
+    margin-right: 100px;
+    margin-top: 50px;
+    padding-bottom: 150px;
+    font-size: 20px;
+    font-family: 'Patua One', cursive
+}
+
+#merch-header {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 110px
+}
+
+#title-header {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 110px
+}
+
+nav {
+    align-content: center;
+    margin: auto
+}
+
+nav ul {
+    text-align: center;
+    padding-left: 0px;
+    font-family: 'Roboto Slab', serif;
+    padding: 10px 30px 10px 30px;
+    border-radius: 10px;
+}
+
+nav li {
+    display: inline;
+    padding: 10px 60px 10px 60px;
+    background-color: rgba(211, 90, 69, 0.452);
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 5px
+
+}
+
+a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+#intro {
+    width: 850px;
+    height: 400px;
+    margin-top: 100px;
+    margin-left: -50px;
+    background-color: rgba(211, 90, 69, 0.452);
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px
+}
+
+#intro p {
+    margin-left: 75px;
+    margin-right: 50px;
+    margin-top: 75px;
+    font-size: 20px;
+    font-family: 'Patua One', cursive;
+    color: rgb(255, 242, 240)
+}
+
+h2 {
+    margin-left: 75px;
+    margin-top: 50px;
+    font-size: 50px
+
+}
+
+#salmon {
+    margin-left: 1200px;
+    margin-top: -250px;
+    border-radius: 40px
+}
+
+#about {
+    float: right;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    width: 700px;
+    height: 500px;
+    margin-top: 50px;
+    margin-right: -50px;
+    background-color: rgba(255, 255, 255, 0.521)
+}
+
+#about h2 {
+    margin-right: 100px;
+    text-align: right;
+}
+
+#about p {
+    margin-left: 75px;
+    margin-right: 100px;
+    margin-top: 50px;
+    font-size: 20px;
+    font-family: 'Patua One', cursive
+}
+
+#family-pic {
+    width: 500px;
+    margin-top: 230px;
+    margin-left: 150px;
+    border-radius: 15px
+}
+
+#locations {
+    width: 1200px;
+    height: 1600px;
+    margin-top: 600px;
+    margin-left: -50px;
+    background-color: rgba(211, 90, 69, 0.452);
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px
+}
+
+#locations ul {
+    list-style-image: url(https://raw.githubusercontent.com/alchemy-bootcamp-one-winter-2018/lectures/master/class-09-css_wireframe_part_1/lab/assets/salmon.png);
+    margin-left: 150px
+}
+
+#locations li {
+    font-family: 'Patua One', cursive;
+    margin-left: 100px;
+    font-size: 40px;
+    line-height: 30px;
+    color: rgb(255, 242, 240)
+}
+
+#contact {
+    float: right;
+    border-radius: 15px;
+    width: 700px;
+    height: 300px;
+    margin-top: 50px;
+    margin-right: -50px;
+    background-color: rgba(255, 255, 255, 0.521)
+}
+
+#contact h2 {
+    text-align: right;
+    margin-right: 100px
+}
+
+#contact p {
+    text-align: right;
+    margin-right: 100px;
+    margin-top: 50px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px
 }

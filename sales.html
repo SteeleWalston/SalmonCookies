@@ -1,11 +1,13 @@
 <!DOCTYPE html>
     <html>
         <head>
-            <title>Salmon Cookies</title>
+            <title>Sales of Cookies</title>
+            <link href="https://fonts.googleapis.com/css?family=Patua+One|Permanent+Marker|Roboto+Slab" rel="stylesheet">
+            <link rel ="stylesheet" href ="style.css"></link>
             <link rel="stylesheet" href="style.css"></link>
         </head>
         <body>
-            <h1>Salmon Cookies</h1>
+            <h1 id="store-header">Salmon Cookies</h1>
             <section id="cookies-table">
                 <table>
                     <thead>
@@ -16,6 +18,25 @@
                     </tfoot>
                 </table>
             </section>
+            <form>
+                <fieldset>
+                    <legend>Add A New Store Location</legend>
+
+                    <label for="new-store">New Location</label>
+                    <input type="text" id="new-store" name="newStore" required>
+
+                    <label for="min-customers">Minimum Customers Expected/Hour</label>
+                    <input type="number" id="min-customers" name="minCustomers" required>
+
+                    <label for="max-customers">Maximum Customers Expected/Hour</label>
+                    <input type="number" id="max-customers" name="maxCustomers" required>
+
+                    <label for="cookies-per">Expected Cookies Purchased/Customer</label>
+                    <input type="number" step="0.1" id="cookies-per" name="cookiesPer" required>
+
+                    <button type="submit">Make it Happen!</button>
+                </fieldset>
+            </form>
             <script src="app.js"></script>
         </body>
     </html>
